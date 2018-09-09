@@ -4,10 +4,24 @@
             peeg
         </title>
         <script>
-            console.log("hello world");
+            function calcEg(){
+                pe = Number(document.getElementsByName("pe")[0].value);
+                cp = Number(document.getElementsByName("cp")[0].value);
+                wg = Number(document.getElementsByName("wg")[0].value);
+                dr = Number(document.getElementsByName("dr")[0].value);
+                resultElem = document.getElementById("result");
+                resultElem.value += pe+cp+wg+dr;
+            }
         </script>
     </head>
     <body>
-        <p>"hello world"</p>
+        <form>
+            P/E ratio : <input type="text" name="pe"/><br>
+            Continuation Period (how long the growth lasts before normalizing to world growth) : <input type="text" name="cp"/><br>
+            world growth rate : <input type="text" name="wg"/><br>
+            discount rate : <input type="text" name="dr" /><br>
+            <button type="button" onClick="calcEg()">Calculate Expected Growth</button><br>
+            <label id="result">The Market expectation of growth of the company is : </label>
+        </form>
     </body>
 </html>
